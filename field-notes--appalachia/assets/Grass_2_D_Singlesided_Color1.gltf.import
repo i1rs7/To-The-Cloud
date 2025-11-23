@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://uhthjyfs5fjr"
-path="res://.godot/imported/Tree_4_C_Color1.gltf-249204e136bf6143b4e66d97348403e2.scn"
+uid="uid://cst885mmg5lpj"
+path="res://.godot/imported/Grass_2_D_Singlesided_Color1.gltf-515c0fe456bb139a0d819864b4eba685.scn"
 
 [deps]
 
-source_file="res://assets/Tree_4_C_Color1.gltf"
-dest_files=["res://.godot/imported/Tree_4_C_Color1.gltf-249204e136bf6143b4e66d97348403e2.scn"]
+source_file="res://assets/Grass_2_D_Singlesided_Color1.gltf"
+dest_files=["res://.godot/imported/Grass_2_D_Singlesided_Color1.gltf-515c0fe456bb139a0d819864b4eba685.scn"]
 
 [params]
 
@@ -37,14 +37,6 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"materials": {
-"forest": {
-"use_external/enabled": true,
-"use_external/fallback_path": "res://assets/mat_tree.tres",
-"use_external/path": "uid://c3kay6aee3ubl"
-}
-}
-}
+_subresources={}
 gltf/naming_version=2
 gltf/embedded_image_handling=1

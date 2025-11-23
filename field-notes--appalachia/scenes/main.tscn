@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6sslpmuhrbc3"]
+[gd_scene load_steps=9 format=3 uid="uid://c6sslpmuhrbc3"]
 
 [ext_resource type="Script" uid="uid://d1aq2wubx4s8c" path="res://scripts/main.gd" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="2_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://uhthjyfs5fjr" path="res://assets/Tree_4_C_Color1.gltf" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://uhthjyfs5fjr" path="res://assets/Tree_4_Big.gltf" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://bmqhpgj3b5h5h" path="res://assets/Tree_4_Small.gltf" id="4_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://bm8adyoxcieog" path="res://assets/Tree_4_Medium.gltf" id="5_tefeu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -41,4 +43,13 @@ size = Vector3(4.8, 0.5, 2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.3, 1.3000001)
 
 [node name="Tree_4_C_Color12" parent="." instance=ExtResource("3_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9, -0.2, 4.7000003)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4, -0.2, 5.6)
+
+[node name="Tree_4_A_Color12" parent="." instance=ExtResource("4_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, -0.2, 7.9)
+
+[node name="Tree_4_B_Color12" parent="." instance=ExtResource("5_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.099999905, 0, 8.1)
+
+[node name="Tree_4_Small" parent="." instance=ExtResource("4_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1000001, -0.2, 11.5)

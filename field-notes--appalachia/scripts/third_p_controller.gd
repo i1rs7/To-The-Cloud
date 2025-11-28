@@ -19,6 +19,9 @@ var _was_on_floor_last_frame := true
 @onready var _start_position := global_position
 @onready var _skin = $Robot
 @onready var AnimPlayer = $Robot/AnimationPlayer
+@onready var robo_cam: Camera3D = $RoboCam
+@onready var head_pos: Marker3D = $Robot/Marker3D
+
 
 
 func _ready() -> void:
@@ -36,11 +39,11 @@ func _physics_process(delta: float) -> void:
 		velocity.z = direction.z * move_speed
 		var target_angle := Vector3.BACK.signed_angle_to(_last_input_direction, Vector3.UP)
 		_skin.global_rotation.y = lerp_angle(_skin.rotation.y, target_angle, rotation_speed * delta)
+		#robo_cam.rotation = _skin.global_rotation
+		#robo_cam.rotation.y = _skin.global_rotation.y + 180.0
 	else:
 		velocity.x = move_toward(velocity.x, 0, move_speed)
 		velocity.z = move_toward(velocity.z, 0, move_speed)
-	
-	
 	
 
 	# Character animations and visual effects.

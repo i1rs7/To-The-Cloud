@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://6kywuu335guj"]
 
-[ext_resource type="Script" uid="uid://cfvk4mpu41xkg" path="res://archive/new_tp_controller.gd" id="1_psv7u"]
+[ext_resource type="Script" uid="uid://dbx2kauar4ly0" path="res://scripts/third_p_controller.gd" id="1_psv7u"]
 [ext_resource type="PackedScene" uid="uid://bmc6qg4yq7r8f" path="res://scenes/robot.tscn" id="2_psv7u"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_psv7u"]
@@ -16,3 +16,13 @@ shape = SubResource("CapsuleShape3D_psv7u")
 
 [node name="Robot" parent="." instance=ExtResource("2_psv7u")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Marker3D" type="Marker3D" parent="Robot"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 3.7, 1.6)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Robot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)
+spring_length = 5.0
+
+[node name="RoboCam" type="Camera3D" parent="Robot/SpringArm3D"]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)

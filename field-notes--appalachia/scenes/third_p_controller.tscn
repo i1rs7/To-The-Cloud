@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://6kywuu335guj"]
+[gd_scene load_steps=7 format=3 uid="uid://6kywuu335guj"]
 
 [ext_resource type="Script" uid="uid://dbx2kauar4ly0" path="res://scripts/third_p_controller.gd" id="1_psv7u"]
 [ext_resource type="PackedScene" uid="uid://bmc6qg4yq7r8f" path="res://scenes/robot.tscn" id="2_psv7u"]
@@ -8,6 +8,9 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_psv7u"]
 radius = 1.2
 height = 4.7000003
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_8olxv"]
+viewport_path = NodePath("Robot/Head/SubViewport")
 
 [node name="third_p_controller" type="CharacterBody3D"]
 script = ExtResource("1_psv7u")
@@ -27,6 +30,14 @@ spring_length = 5.0
 
 [node name="RoboCam" type="Camera3D" parent="Robot/Head/SpringArm3D"]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="SubViewport" type="SubViewport" parent="Robot/Head"]
+own_world_3d = true
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="RoboCam2" type="Camera3D" parent="Robot/Head/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)
 
 [node name="CamUI" type="Control" parent="."]
 layout_mode = 3
@@ -49,3 +60,11 @@ theme_override_fonts/font = ExtResource("4_8olxv")
 theme_override_font_sizes/font_size = 32
 text = "Zoom: _%"
 horizontal_alignment = 1
+
+[node name="RecentPic" type="Sprite2D" parent="CamUI"]
+position = Vector2(155, 562)
+scale = Vector2(0.27, 0.27)
+texture = SubResource("ViewportTexture_8olxv")
+
+[node name="PicView" type="Timer" parent="CamUI"]
+wait_time = 2.0

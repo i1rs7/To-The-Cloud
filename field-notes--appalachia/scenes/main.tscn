@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6sslpmuhrbc3"]
+[gd_scene load_steps=7 format=3 uid="uid://c6sslpmuhrbc3"]
 
-[ext_resource type="Script" uid="uid://d1aq2wubx4s8c" path="res://scripts/main.gd" id="1_sugp2"]
-[ext_resource type="Script" uid="uid://broga2ghy74fn" path="res://scripts/player.gd" id="3_jyhfs"]
+[ext_resource type="Script" uid="uid://d1aq2wubx4s8c" path="res://scripts/player.gd" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://6kywuu335guj" path="res://scenes/third_p_controller.tscn" id="3_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://dvw4w7n588has" path="res://scenes/boxes_environment.tscn" id="4_jyhfs"]
 
@@ -19,7 +18,6 @@ tonemap_mode = 2
 glow_enabled = true
 
 [node name="Main" type="Node3D"]
-script = ExtResource("1_sugp2")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_0xm2m")
@@ -35,7 +33,7 @@ script = ExtResource("3_jyhfs")
 [node name="third_p_controller" parent="Player" instance=ExtResource("3_tbgi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -27.2, 0)
 
-[node name="proto_environment" parent="." instance=ExtResource("4_jyhfs")]
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, -10.599998, -13.900001, 10.800003)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, -69.1, 14.2, 79.9)
+[node name="proto_environment" parent="." instance=ExtResource("4_jyhfs")]
